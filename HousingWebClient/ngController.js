@@ -19,7 +19,6 @@ $scope.bills = [{ 'type':'Water', 'value': 1250, 'date': '11.12.17'},
 		
 		
 		
-		
 $scope.logIn = function() {
 		$http({
 			method : 'GET',
@@ -29,7 +28,8 @@ $scope.logIn = function() {
 		}).error(function(data, status, headers, config) {
 			alert( "failure");
 		});
-	
+	console.log($scope.currentUser);
+	console.log($scope.pswd);
 	//if password is correct, show bills and polls
 	if($scope.currentUser.password == $scope.pswd)
 	{
@@ -65,7 +65,7 @@ $scope.getBills = function() {
 	{
 		$http({
 			method : 'GET',
-			url : '/measurements/:' + $scope.currentUser._id
+			url : '/measurements/:' + $scope.currentUser.email
 		}).success(function(data, status, headers, config) {
 			$scope.bills = data;
 		}).error(function(data, status, headers, config) {
