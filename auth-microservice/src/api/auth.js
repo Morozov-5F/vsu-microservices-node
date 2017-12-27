@@ -10,9 +10,9 @@ module.exports = (app, options) => {
     res.status(status.FORBIDDEN).json({'response': 'unauthorized'})
   })
 
-  // Get user by ID
+  // Get user by email
   app.get('/auth/users/:email', (req, res, next) => {
-    if (req.params.id == null) {
+    if (req.params.email == null) {
       res.status(status.NO_CONTENT).json({ 'response': 'expected parameter \'id\'' })
       return
     }
