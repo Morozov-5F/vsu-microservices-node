@@ -14,8 +14,9 @@ db.users.insertMany([{
     }
 ])
 db.createCollection('tokens')
-const userId1 = db.users.findOne({email: 'zhe3145@yandex.ru'}, {_id: 1})._id
-const userId2 = db.users.findOne({email: 'example@example.com'}, {_id: 1})._id
+
+var userId1 = db.users.findOne({email: 'zhe3145@yandex.ru'}, {_id: 1})._id
+var userId2 = db.users.findOne({email: 'example@example.com'}, {_id: 1})._id
 
 // Stuff for flats microservice
 db = db.getSiblingDB('flats');
