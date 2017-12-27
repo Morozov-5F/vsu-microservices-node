@@ -23,9 +23,23 @@ const dbSettings = {
   })
 }
 
-// server parameters
-const serverSettings = {
-  port: process.env.PORT || 3000
+const servicesSettings = {
+  authService: {
+    hostname: 'auth-server',
+    port: 3000
+  }
 }
 
-module.exports = Object.assign({}, { dbSettings, serverSettings })
+// server parameters
+const serverSettings = {
+  port: process.env.PORT || 3000,
+  authService: {
+    hostname: process.env.AUTH_HOST || 'auth-server',
+    port: process.env.AUTH_PORT || 3001
+  }
+}
+
+module.exports = Object.assign({}, {
+  dbSettings,
+  serverSettings
+})

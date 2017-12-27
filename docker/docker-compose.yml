@@ -54,10 +54,13 @@ services:
     container_name: "receipts-microservice"
     environment:
       - DB_SERVERS=mongodb-server:27017
+      - AUTH_HOST=auth-server
+      - AUTH_PORT=3000
     networks:
       - vsu-microservices
     depends_on:
       - "mongo-database"
+      - "auth-microservice"
     ports:
       - "3003:3000"
 

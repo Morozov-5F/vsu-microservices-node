@@ -10,6 +10,8 @@ const mediator = new EventEmitter()
 console.log('--- Measurements service ---')
 console.log('Connecting to auth repository...')
 
+console.log(config)
+
 // log unhandled execpetions
 process.on('uncaughtException', (err) => {
   console.error('Unhandled Exception', err)
@@ -25,8 +27,10 @@ mediator.on('db.ready', (db) => {
     .then(repo => {
       console.log('Repository Connected. Starting Server')
       rep = repo
+
       return server.start({
         port: config.serverSettings.port,
+        authServer: config.serverSettings.authService,
         repo
       })
     })
