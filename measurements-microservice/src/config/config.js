@@ -35,7 +35,7 @@ const serverSettings = {
   port: process.env.PORT || 3000,
   authService: {
     hostname: process.env.AUTH_HOST || 'auth-server',
-    port: process.env.AUTH_PORT || 3001
+    port: process.env.AUTH_PORT || 3000
   }
 }
 

@@ -7,7 +7,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
-	
+
 	<link rel="stylesheet"
 	href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 <script
@@ -16,29 +16,29 @@
 	src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.17/angular.min.js"></script>
-	
+
 	<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="login-signup/css/reset.css"> <!-- CSS reset -->
-	<link rel="stylesheet" href="login-signup/css/style.css"> <!-- Gem style -->	
+	<link rel="stylesheet" href="login-signup/css/style.css"> <!-- Gem style -->
 	<link rel="stylesheet" href="Content/Voter.css">
 	<script src="login-signup/js/modernizr.js"></script> <!-- Modernizr -->
-	<script src="ngController.js"></script>	
+	<script src="ngController.js"></script>
 </head>
-  
+
 <body ng-controller="housingAppController" id="top">
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- Top Background Image Wrapper -->
-<div class="bgded overlay" style="background-image:url('images/demo/backgrounds/01.png');"> 
+<div class="bgded overlay" style="background-image:url('images/demo/backgrounds/01.png');">
   <!-- ################################################################################################ -->
   <div class="wrapper row1">
-    <header id="header" class="hoc clear" > 
+    <header id="header" class="hoc clear" >
 	  <div id="logo" class="fl_left">
         <h1><a href="index.html">Housing Service</a></h1>
       </div>
       <!-- ################################################################################################ -->
-      
+
 	<nav class="main-nav">
 	  <nav id="mainav" class="fl_right">
 			<ul>
@@ -51,7 +51,7 @@
 		</nav>
       </nav>
       <!-- ################################################################################################ -->
-    </header>	
+    </header>
 		<div class="cd-user-modal"> <!-- this is the entire modal form, including the background -->
 		<div class="cd-user-modal-container"> <!-- this is the container wrapper -->
 			<ul class="cd-switcher">
@@ -79,7 +79,7 @@
 						<input ng-click="logIn()" class="full-width" type="submit" value="Login">
 					</p>
 				</form>
-				
+
 				<p class="cd-form-bottom-message"><a href="#0">Forgot your password?</a></p>
 				<!-- <a href="#0" class="cd-close-form">Close</a> -->
 			</div> <!-- cd-login -->
@@ -134,13 +134,13 @@
 			<a href="#0" class="cd-close-form">Close</a>
 		</div> <!-- cd-user-modal-container -->
 	</div> <!-- cd-user-modal -->
-	
+
   </div>
   <!-- ################################################################################################ -->
   <!-- ################################################################################################ -->
   <!-- ################################################################################################ -->
   <div id="pageintro" class="hoc clear">
-    <article> 
+    <article>
       <!-- ################################################################################################ -->
       <h3 class="heading">Innovative Housing Service</h3>
       <p>We provide a completely new level of service offering our customers the oppotunity to manage all the payments from everywhere they may find the Internet.</p>
@@ -155,7 +155,7 @@
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <div class="wrapper row3">
-  <main class="hoc container clear"> 
+  <main class="hoc container clear">
    <div class="sectiontitle">
       <h6  class="heading">
 	  BILLS
@@ -167,7 +167,7 @@
     <br>
 
 	<div ng-show="billsCanBeShown" ng-init="getBills()">
-		<div class="col-xs-12">		
+		<div class="col-xs-12">
 			<div class="col-xs-6">
 				Search
 				<input class="form-control ng-pristine ng-valid" ng-model="searchKeyword" type="text">
@@ -179,7 +179,7 @@
 			</th>
 			<th><a href="" ng-click="orderByField='value'; reverseSort = !reverseSort">Value</a>
 			</th>
-			<th><a href="" ng-click="orderByField='date'; reverseSort = !reverseSort">Date</a>
+			<th><a href="" ng-click="orderByField='createdAt'; reverseSort = !reverseSort">Date</a>
 			</th>
 			<th>Action
 			</th>
@@ -189,7 +189,7 @@
 			</td>
 			<td>{{bill.value}}
 			</td>
-			<td>{{bill.date}}
+			<td>{{bill.createdAt}}
 			</td>
 			<td>
 			<input type="button" value="Remove" class="btn btn-danger btn-sm" ng-click="removeRow(bill.type, bill.value, bill.date)"/>
@@ -223,7 +223,7 @@
 					ng-model="date" />
 			</div>
 		</div>
-		<div class="form-group">								
+		<div class="form-group">
 			<div style="padding-left:140px">
 				<input type="submit" value="Add" class="btn btn-primary"/>
 			</div>
@@ -239,14 +239,14 @@
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <div class="wrapper bgded overlay" style="background-image:url('images/demo/backgrounds/02.png');">
-  <div class="hoc container clear"> 
+  <div class="hoc container clear">
     <!-- ################################################################################################ -->
     <div class="sectiontitle">
       <h6 class="heading">
 	  Voting
 	  <a id="pollsRef" name="polls"></a>
 	  </h6>
-    </div>	
+    </div>
 	<div ng-show="pollsCanBeShown" class="col-md-6 col-md-offset-3">
 
             <div class="panel panel-primary">
@@ -261,35 +261,35 @@
                         <li class="list-group-item">
                             <div class="checkbox">
                                 <label>
-								<font color="black">First floor</font>								
-                                <input type="checkbox" value="1">                                   
+								<font color="black">First floor</font>
+                                <input type="checkbox" value="1">
                                 </label>
                             </div>
                         </li>
                         <li class="list-group-item">
                             <div class="checkbox">
                                 <label>
-								<font color="black">Second floor</font>								
-                                <input type="checkbox" value="2">                                  
+								<font color="black">Second floor</font>
+                                <input type="checkbox" value="2">
                                 </label>
                             </div>
                         </li>
                         <li class="list-group-item">
                             <div class="checkbox">
                                 <label>
-								<font color="black">Third floor</font>								
-                                <input type="checkbox" value="3">                                    
+								<font color="black">Third floor</font>
+                                <input type="checkbox" value="3">
                                 </label>
                             </div>
                         </li>
                         <li class="list-group-item">
                             <div class="checkbox">
                                 <label>
-								<font color="black">None</font>								
-                                <input type="checkbox" value="0">                                     
+								<font color="black">None</font>
+                                <input type="checkbox" value="0">
                                 </label>
                             </div>
-                        </li>                        
+                        </li>
                     </ul>
                 </div>
                 <div class="panel-footer text-center">
@@ -306,7 +306,7 @@
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <div class="wrapper row5">
-  <div id="copyright" class="hoc clear"> 
+  <div id="copyright" class="hoc clear">
     <!-- ################################################################################################ -->
     <p class="fl_left">Copyright &copy; 2017 - Russia </p>
     <p class="fl_right">Your Housing Service</p>

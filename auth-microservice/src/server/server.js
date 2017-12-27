@@ -28,7 +28,7 @@ const start = (options) => {
       reject(new Error('Something went wrong!, err:' + err))
       res.status(500).send('Something went wrong!')
     })
-
+    app.disable('etag')
     // we add our API's to the express app
     authAPI(app, options)
 
